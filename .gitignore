@@ -5,6 +5,5 @@ dist/
 npm-debug.log*
 cordova/platforms
 cordova/plugins
-*.zip
-package_real_prev.json
-src/Hello.vue
+.babelrc
+.editorconfig

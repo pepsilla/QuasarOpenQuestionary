@@ -1,0 +1,461 @@
+@import "variables";
+*{
+	box-sizing:border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin-top:0;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+//VARIABLES
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+ 
+  .container {
+    @include make-container();
+    @include make-container-max-widths();
+  }
+ 
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but with 100% width for
+// fluid, full width layouts.
+ 
+  .container-fluid {
+    @include make-container();
+  }
+ 
+
+.clearboth{
+  width:100%;
+  clear:both;
+}
+
+.align-items-center {
+    -webkit-box-align: center!important;
+    -ms-flex-align: center!important;
+    align-items: center!important;
+}
+
+
+   .toptoolbar{
+     // padding:20px;  
+
+      	@include media-breakpoint-up(md){
+			//border:2px solid red;
+	     padding-top:15px;
+	     padding-bottom:15px;
+		}
+  }
+
+.q-toolbar {
+ 
+    background: $colorprimary;
+    padding:20px 0;
+}
+
+  .layout-page-container{
+   // border:2px solid green;
+
+
+  }
+
+  .cont_centrar{
+   // height:70vh;
+   // align-items:stretch;
+
+
+    @include media-breakpoint-up(md){
+       position:absolute;
+       bottom:0;
+       width:100%;
+       top:0;
+
+    }
+
+
+  }
+
+  .cont_total{
+  	//height:100vh; 
+  	position:relative;
+  	padding:20px;
+   // border:2px solid blue;
+   //border:3px solid blue;
+   //background-color:#efefef;
+  }
+  .pant_inicio{
+   	
+    position:relative;
+    width:100%;
+   	 //top:40%;
+      
+   // transform:translateY(-50%); 
+  }
+
+  .transTop{
+    //transform:translateY(-50%); 
+    position:relative; 
+  }
+
+  .alerta{
+ 	padding:20px 20px 20px 20px;
+    /*margin-bottom: 20px;*/
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    display: block;
+    overflow: hidden;
+    position: relative;
+    h4{
+    	margin-bottom:30px;
+    }
+ 
+  }
+
+.advertencia { 
+  font-size: 12px; 
+  color:black;
+
+  padding:10px 5px;
+  border-radius:5px;
+  //background-color:#ededed;
+
+  margin-top:30px;
+
+	.icono_l{
+		float:left;
+		font-size:26px;
+		margin-left:0;
+		padding:5px;
+
+
+	}  
+ 
+}
+
+.listado{
+	margin-left:20px;
+	padding-left:0;
+	//list-style-position :inside;
+	li{
+		margin-bottom:20px;
+	}
+}
+
+
+.actionButton {
+
+  font-size: 12px;
+ background-color:$colorprimary ;// #034725;#1a9537
+  border:0;
+  cursor:pointer;
+  border-radius: 2px;
+  color: white;
+  margin: 2px;
+  padding: 7px 16px;
+
+  box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.5);
+
+  transition: all 0.3s;
+  &:hover{
+    background-color:$colorprimaryshine;
+    color:black;
+  }
+}
+
+.col_preguntas{
+    background-color: $colorterciario; //#1a9537; #034725;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-align: center; 
+    font-size: 26px; 
+    color: black; 
+    height:100%;
+    
+    padding-bottom:20px;
+
+    @include media-breakpoint-up(md){
+
+      margin:0 5px;
+
+    }
+
+}
+
+ .sobre_verde{
+  background-color:$colorTiempo;
+  color:black;
+ }
+
+ .digits{
+  //border:1px solid red;
+  padding-top:10px;
+  padding:10px;
+ }
+
+ /*PREGUNTA*/
+
+
+ .pregunta {
+  float:right;
+  //border:1px solid red;
+  width:calc(100% - 50px);
+}
+.textoPregunta {
+  font-size: 22px;
+  //margin-left: 20px;
+  clear:both;
+  margin-bottom:20px;
+  font-weight:700;
+}
+
+
+
+.tempus {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+  border: 2px solid grey;
+  border-radius: 10px;
+  font-size: 26px;
+  background-color: rgb(109, 109, 109);
+  color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+}
+.infoRev {
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+}
+.navPregunta {
+    flex: 1;
+}
+.caja_resp{
+  clear:both;
+  width:100%;
+  //border:1px solid blue;
+  //padding-left:20px;
+  .q-item-side{
+    margin-right:0;
+   // border:1px solid orange;
+    padding-right:0;
+    min-width:auto;
+
+
+  }
+}
+
+.globo_preg{
+  float:left; 
+}
+
+.but_corregir{
+ 
+  color:black;
+ // margin-bottom:30px;
+
+}
+
+.labelText {
+  font-size: 13px;
+  margin:15px 0 10px 0;
+  font-weight: 700;
+  text-transform:uppercase;
+}
+
+
+.timerBox{
+ 
+  padding:10px 20px;
+  background-color:white;
+  display:inline-block;
+  clear:both;
+  border-radius:200px;
+
+   font-size: 16px;
+
+  @include media-breakpoint-up(md){
+      font-size: 20px;
+       //margin-bottom:20px;
+  }
+
+  @include media-breakpoint-up(lg){
+      font-size: 26px;
+      // margin-bottom:20px;
+  }
+
+
+}
+.advertText{
+  font-size:10px;
+  color:black;
+}
+ 
+.row_steps{
+  margin-top:15px;
+  //border:1px solid red;
+
+  -webkit-box-ordinal-group: 10001;
+    -ms-flex-order: 10000;
+    order: 10000; 
+
+    margin-left:0;
+    padding:0 5px;
+}
+
+
+.bot_step{
+   text-align:center;
+  a{
+    //padding:5px 11px; 
+    //border-radius:200px;
+    //Si tengo 20 preguntas, deja mucho espacio entre ellas.
+    //¿Es posible darle el mismo efecto que a los botones? 
+    border-radius:0px;//@pepsilla for no borders
+    margin-bottom:10px;
+    padding-top:5px;
+    width:32px;
+    height:32px;
+ 
+    display:inline-block;
+    background-color:$grisLight; 
+     text-align:center;
+     display:inline-block;
+     transition:all 0.3s;
+  
+    border: 0; 
+    border-radius: 2px;
+    color: white;
+ 
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+
+     &:hover{
+
+        background-color:#ededed;
+        color:black;
+
+     }
+
+  }
+ 
+}
+
+.isNoOk{
+  background-color:red !important;
+}
+.isOk{
+   background-color:green !important;
+}
+.row_rev{
+  //border:1px solid red;
+  //padding:7px;
+  padding-top:0;
+  width:100%;
+  margin-left:-15px;
+  margin-top:10px;
+
+}
+
+.nu_int{
+  margin-bottom:20px;
+}
+
+.caja_tiempo{
+    -webkit-box-ordinal-group: 10001;
+    -ms-flex-order: 10000;
+    order: 10000;
+
+     @include media-breakpoint-up(md){
+      -webkit-box-ordinal-group: -9999;
+      -ms-flex-order: -10000;
+      order: -10000;
+     }
+
+ 
+
+     margin-top:20px;
+     @include media-breakpoint-up(md){
+      margin-top:0;
+     }
+
+   }
+
+.caja_preg{
+
+  -webkit-box-ordinal-group: -9999;
+    -ms-flex-order: -10000;
+    order: -10000;
+     @include media-breakpoint-up(md){
+-webkit-box-ordinal-group: 10001;
+    -ms-flex-order: 10000;
+    order: 10000;
+     }
+}
+
+
+.intentos{
+  margin-top:20px;
+  padding-top:15px;
+  border-left:0;
+  border-top:1px solid white;
+
+
+  .num_intentos{
+   font-size: 13px;
+   font-weight: 900;
+   text-transform:uppercase;
+
+  }
+
+  .ico_try{
+    margin:0 2px;
+    color:white;
+  }
+
+  @include media-breakpoint-between(sm,md){
+    margin-top:0;
+    border:0;
+    border-left:1px solid white;
+  }
+
+  @include media-breakpoint-up(md){
+    padding-top:15px;
+     margin-top:20px;
+  border-left:0;
+  border-top:1px solid white;
+  }
+
+}
+
+.no_more_tries{
+  padding:5px;
+  font-weight:600;
+  font-size: 15px;
+}

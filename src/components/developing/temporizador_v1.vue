@@ -39,11 +39,12 @@ export default {
     }
   },
   methods: {
+     tiempoStop () {
+        this.timerStop ();
+     },
     cadaSegundo () {
-      // console.info('€€€€ LIVE ONE SECOND MOORE €€€')
       if (this.minutos === 0 && this.segundos === 0) {
         this.timerStop()
-        // console.info('@@@@ NO MOORE LIVE @@@@')
         this.$emit('tempusfugit')
         return
       }
@@ -56,13 +57,11 @@ export default {
       this.segundos -= 1
     },
     timerStart () {
-      // console.info('**** GENERANDO UN PULSO CADA SEGUNDO *****')
       this.temporizador = setInterval(this.cadaSegundo, 1000)
     },
     timerStop () {
       clearInterval(this.temporizador)
     }
-
   },
   mounted () {
     this.minutos = this.tiempo
