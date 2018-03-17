@@ -333,11 +333,7 @@ h1,h2,h3,h4,h5,h6{
 .bot_step{
    text-align:center;
   a{
-    //padding:5px 11px; 
-    //border-radius:200px;
-    //Si tengo 20 preguntas, deja mucho espacio entre ellas.
-    //¿Es posible darle el mismo efecto que a los botones? 
-    border-radius:0px;//@pepsilla for no borders
+    border-radius:0px;
     margin-bottom:10px;
     padding-top:5px;
     width:32px;
