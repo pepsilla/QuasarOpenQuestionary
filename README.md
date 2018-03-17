@@ -1,5 +1,5 @@
 # Quasar Open Questionary
-> A project made width quasar-framework to design an simple questionary by José M. Pérez & Alejandro Casasús
+> A project made with quasar-framework to design an simple questionnaire by José M. Pérez & Alejandro Casasús
 
 ## Features:
 - Basic SCORM 1.2 support
