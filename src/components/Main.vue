@@ -5,18 +5,19 @@
     :left-class="{'bg-grey-2': true}"
   >
     <div>
-      <!--En la versión anterior tenía el hack en node-modules. Corregido -->
-      <q-toolbar slot="header" class="glossy" style="background: #bf360c">
-        <img src="statics/logo.png" />
-        <q-toolbar-title>
-          {{evaluacion.ejerName}}
-          <div slot="subtitle">
-            {{evaluacion.id}}
-          </div>
-        </q-toolbar-title>
+      <q-toolbar slot="header"> 
+        <div>
+          <q-toolbar-title>
+          <img src="statics/logo_hor.png" /><br>
+            {{evaluacion.ejerName}}
+            <div slot="subtitle">
+              {{evaluacion.id}}
+            </div>
+          </q-toolbar-title>
+        </div>
       </q-toolbar>
     </div>
-    evaluacion:Evaluacion->Evaluacion_v1.vue
+    <div class=" row items-center cont_centrar " style=" ">
     <evaluacion
       :evaluacion="evaluacion"
       :point="point"
@@ -25,7 +26,9 @@
       v-if="configured"
       @closeUnit="closeNavigatorWindow"
       @unitCompleted="completeThisUnit"
+      @isCompleted="fixAdvanced"
     />
+    </div>
   </q-layout>
 </template>
 
@@ -88,6 +91,7 @@ export default {
       rotateY: 0,
       rotateX: 0,
       point: 1,
+      isCompleted: false,
       configured: false,
       evaluacion: {},
       evalConfigLocation: './statics/open_questionary/data_model.json',
@@ -124,39 +128,42 @@ export default {
     }
   },
   methods: {
+    fixAdvanced () {
+      if (!this.isCompleted) {
+        console.info('fixAdvanced()->That is all my friend')
+        this.completed()
+        this.getIntervalo()
+        this.timeSet()
+        this.conmit()
+        this.finish()
+        this.isCompleted = true
+      }
+    },
     reorderQuestions () {
-      // console.info('ReorderQuestions(IN)')
-      // console.log(this.evaluacion.PREGUNTAS)
       var listado = this.evaluacion.PREGUNTAS.slice(0)
       var lon = listado.length
       for (var i = 0; i < lon; i++) {
         var aleatorio = Math.floor(Math.random() * listado.length)
-        // var seleccion = listado[aleatorio]
-        // console.info(seleccion)
         this.newPreguntas.PREGUNTAS.push(listado.splice(aleatorio, 1))
       }
-      // console.info('new Array reordered:')
-      // console.log(this.newPreguntas)
     },
     completeThisUnit () {
-      // console.info('Unidad completada', this.unidades[this.indexUnit].isCompleted, this.indexUnit)
-      // this.unidades[this.indexUnit].isCompleted = true
-      // this.state = 4
-      // console.info('Unidad completada', this.unidades[this.indexUnit].isCompleted, this.indexUnit)
-      // console.info('Esta unidad ha sido completada')
-      this.completed()
-      this.getIntervalo()
-      this.timeSet()
-      this.conmit()
-      this.finish()
+      console.info('completeThisUnit ()')
+      if (!this.isCompleted) {
+        this.completed()
+        this.getIntervalo()
+        this.timeSet()
+        this.conmit()
+        this.finish()
+        this.isCompleted = true
+        console.info('That is all my friend')
+      }
       this.closeNavigatorWindow()
     },
     getIntervalo () {
       if (this.lmsData.tini) {
         var thisEnd = new Date()
         var intervalo = new Date(thisEnd - this.lmsData.tini)
-        // console.info(typeof (intervalo))
-        // Si ya existe un contaje de tiempo lo añade.
         if (this.lmsData.tinvertido) {
           this.lmsData.tinvertido = new Date(
             this.lmsData.tinvertido.getTime() + intervalo.getTime()
@@ -165,19 +172,12 @@ export default {
         else this.lmsData.tinvertido = new Date(intervalo)
 
         intervalo = new Date(this.lmsData.tinvertido.getTime())
-        // console.info(typeof (intervalo))
         var horas = String(intervalo.getHours() - 1)
         if (horas.length < 2) horas = '0' + horas
-        // console.info(horas)
-
         var minutos = String(intervalo.getMinutes())
         if (minutos.length < 2) minutos = '0' + minutos
-        // console.info(minutos)
-
         var segundos = String(intervalo.getSeconds())
         if (segundos.length < 2) segundos = '0' + segundos
-        // console.info(segundos)
-
         var tinvertido = horas + ':' + minutos + ':' + segundos
         this.lmsData.tini = thisEnd
         this.lmsData.tStringInvertido = tinvertido
@@ -306,18 +306,10 @@ export default {
     })
   },
   created () {
-    // console.info('created')
-    // console.info(this.evalConfigLocation)
     axios
       .get(this.evalConfigLocation)
       .then(response => {
         this.evaluacion = response.data
-        // this.evaluacion = JSON.parse(response.data)
-        // console.info(this.unidades[this.indexUnit])
-        // this.source = this.unidades[this.indexUnit]
-        // console.info('created')
-        // console.info('response:')
-        // console.log(response.data)
         if (this.evaluacion.randQuestions === true) this.reorderQuestions()
         this.configured = true
       })
@@ -341,6 +333,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" >
+  @import "../assets/mixins.scss";
+  @import "../assets/general.scss"; 
 </style>

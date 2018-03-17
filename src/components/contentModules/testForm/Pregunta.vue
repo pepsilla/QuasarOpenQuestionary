@@ -1,15 +1,12 @@
 <template>
   <div>
     <div v-for="(dataResponse, indice) in pregunta.RESPUESTAS">
-      form-respuesta:aResponse->./Respuesta.vue
       <form-respuesta :respuesta="dataResponse" :indice="indice" :review="review" :noFeedback="noFeedback" @userSel="userSelection"/>
     </div>
   </div>
 </template>
-
 <script>
   import aResponse from './Respuesta.vue'
-  
   export default {
     props: {
       pregunta: {
@@ -49,7 +46,6 @@
     }
 }
 </script>
-
 <style>
 .Pregunta {
   display: flex;

@@ -1,8 +1,8 @@
 {
     "ejerName": "QUASAR OPEN QUESTIONARY",
-    "numPreguntas": 10,
+    "numPreguntas": 3,
     "totalPreguntas": 20,
-    "tiempo": 20,
+    "tiempo": 6,
     "maxIntentos": 3,
     "errorIntentos": false,
     "id": "SAMPLE TEST",
@@ -12,8 +12,6 @@
       {
         "tittle": "PREGUNTA 1",
         "isOk": false,
-        "solu": 2,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 1.1",
@@ -44,8 +42,6 @@
       {
         "tittle": "PREGUNTA 2",
         "isOk": false,
-        "solu": 3,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 2.1",
@@ -76,8 +72,6 @@
       {
         "tittle": "PREGUNTA 3",
         "isOk": false,
-        "solu": 2,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 3.1",
@@ -108,8 +102,6 @@
       {
         "tittle": "PREGUNTA 4",
         "isOk": false,
-        "solu": 1,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 4.1",
@@ -140,8 +132,6 @@
       {
         "tittle": "PREGUNTA 5",
         "isOk": false,
-        "solu": 1,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 5.1",
@@ -172,8 +162,6 @@
       {
         "tittle": "PREGUNTA 6",
         "isOk": false,
-        "solu": 1,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 6.1",
@@ -204,14 +192,12 @@
       {
         "tittle": "PREGUNTA 7",
         "isOk": false,
-        "solu": 4,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 7.1",
             "isTrue": false,
             "isSelected": false,
-            "feedback": "Incorrectos"
+            "feedback": "Incorrecto"
           },
           {
             "tittle": "RESPUESTA 7.2 ",
@@ -236,8 +222,6 @@
       {
         "tittle": "PREGUNTA 8",
         "isOk": false,
-        "solu": 3,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 8.1",
@@ -268,8 +252,6 @@
       {
         "tittle": "PREGUNTA 9",
         "isOk": false,
-        "solu": 2,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 9.1",
@@ -300,14 +282,12 @@
       {
         "tittle": "PREGUNTA 10",
         "isOk": false,
-        "solu": 4,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 10.1",
             "isTrue": false,
             "isSelected": false,
-            "feedback": "Correcto"
+            "feedback": "Incorrecto"
           },
           {
             "tittle": "RESPUESTA 10.2",
@@ -325,15 +305,13 @@
             "tittle": "RESPUESTA 10.4",
             "isTrue": true,
             "isSelected": false,
-            "feedback": "Incorrecto"
+            "feedback": "Correcto"
           }
         ]
       },
       {
         "tittle": "PREGUNTA 11",
         "isOk": false,
-        "solu": 3,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 11.1",
@@ -364,8 +342,6 @@
       {
         "tittle": "PREGUNTA 12",
         "isOk": false,
-        "solu": 1,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 12.1",
@@ -396,8 +372,6 @@
       {
         "tittle": "PREGUNTA 13",
         "isOk": false,
-        "solu": 3,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 13.1",
@@ -428,8 +402,6 @@
       {
         "tittle": "PREGUNTA 14",
         "isOk": false,
-        "solu": 1,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 14.1",
@@ -460,8 +432,6 @@
       {
         "tittle": "PREGUNTA 15",
         "isOk": false,
-        "solu": 3,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 15.1",
@@ -492,8 +462,6 @@
       {
         "tittle": "PREGUNTA 16",
         "isOk": false,
-        "solu": 3,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 16.1",
@@ -524,8 +492,6 @@
       {
         "tittle": "PREGUNTA 17",
         "isOk": false,
-        "solu": 1,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 17.1",
@@ -556,8 +522,6 @@
       {
         "tittle": "PREGUNTA 18",
         "isOk": false,
-        "solu": 2,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 18.1",
@@ -588,8 +552,6 @@
       {
         "tittle": "PREGUNTA 19",
         "isOk": false,
-        "solu": 1,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 19.1",
@@ -620,8 +582,6 @@
       {
         "tittle": "PREGUNTA 20",
         "isOk": false,
-        "solu": 4,
-        "time": 2,
         "RESPUESTAS": [
           {
             "tittle": "RESPUESTA 20.1",

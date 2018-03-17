@@ -1,16 +1,16 @@
 <template>
-  <div class="Respuesta">
-    <q-item >
+  <div class="respuesta ">
+    <q-item class="items-start" >
       <q-item-side>
         <q-checkbox v-model='respuesta.isSelected' :disable="review" @change="changeSelected"/>
       </q-item-side>
       <q-item-main>
-        <q-item-tile title><i>{{respuesta.tittle}}</i></q-item-tile>
+        <q-item-tile title>{{respuesta.tittle}}</q-item-tile>
         <q-item-tile title v-if="getFeedBackResponse">
             <div :class="getFeedbackClass" v-if="!noFeedback">
               <b>{{respuesta.feedback}}</b>
             </div>
-			<div class="isYellow" v-else>
+			      <div class="isYellow" v-else>
               <b> Has seleccionado más respuestas de las esperadas </b>
             </div>
         </q-item-tile>
@@ -39,7 +39,6 @@ export default {
           if (typeof (value.isSelected) !== 'boolean') return null
           if (typeof (value.tittle) !== 'string') return null
         }
-        // console.info('from Respuesta.vue', value)
         return value
       }
     },
