@@ -1,4 +1,4 @@
-# Quasar Open Questionary
+# Quasar Open Questionary - ARCHIVED -
 > A project made with quasar-framework to design an simple questionnaire by Alejandro Casasús & José M. Pérez
 
 ## Features:
